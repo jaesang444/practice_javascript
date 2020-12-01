@@ -5,20 +5,32 @@ const board = {
 }
 
 const itemInput = document.createElement('input');
+itemInput.id="item";
 const descInput = document.createElement('input');
+descInput.id="desc"
 const create = document.createElement('button');
-create.textContent = '추가';
+const update = document.createElement('button');
 body.append(itemInput);
 body.append(descInput);
+create.textContent = '추가';
 body.append(create);
-
-const itemChange = document.createElement('input');
-const descChange = document.createElement('input');
-const update = document.createElement('button');
 update.textContent = '수정';
-body.append(itemChange);
-body.append(descChange);
 body.append(update);
+
+// const form = document.createElement('form');
+// const itemInput = document.createElement('input');
+// itemInput.id="item";
+// const descInput = document.createElement('input');
+// descInput.id="desc"
+// const create = document.createElement('button');
+// const update = document.createElement('button');
+// form.append(itemInput);
+// form.append(descInput);
+// create.textContent = '추가';
+// form.append(create);
+// update.textContent = '수정';
+// form.append(update);
+
 
 body.appendChild(document.createElement('div'));
 body.lastElementChild.className='items';
@@ -35,28 +47,20 @@ for(let i = 0; i<board.item.length; i++){
 }
 
 
-
 create.addEventListener('click', function(){
   const div = document.createElement('div');
   div.className = 'box';
   const proItem = document.createElement('div');
-  proItem.textContent = itemInput.value;
+  proItem.textContent = document.getElementById('item').value;
   const proDesc = document.createElement('div');
-  proDesc.textContent = descInput.value;
+  proDesc.textContent = document.getElementById('desc').value;
   div.append(proItem);
   div.append(proDesc);
   body.lastElementChild.append(div);
 });
 
-
 update.addEventListener('click', function(){
-  body.lastElementChild.lastElementChild.firstElementChild.textContent = itemChange.value;
-  body.lastElementChild.lastElementChild.lastElementChild.textContent = descChange.value;
-  // body.lastElementChild.firstElementChild.textContent = itemChange.value;
-  // body.lastElementChild.lastElementChild.textContent = descChange.value;
-  // console.log(body.lastElementChild.firstElementChild);
-  // console.log(body.lastElementChild.lastElementChild);
-  // console.log(body.lastChild.firstChild);
-  // console.log(body.lastChild.lastChild);
+  body.lastElementChild.lastElementChild.firstElementChild.textContent = document.getElementById('item').value;
+  body.lastElementChild.lastElementChild.lastElementChild.textContent = document.getElementById('desc').value;
 });
 
