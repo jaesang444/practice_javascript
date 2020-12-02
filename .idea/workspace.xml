@@ -42,7 +42,7 @@
       <updated>1606295886852</updated>
       <workItem from="1606295887928" duration="2239000" />
       <workItem from="1606353773879" duration="14450000" />
-      <workItem from="1606440311769" duration="35788000" />
+      <workItem from="1606440311769" duration="52383000" />
     </task>
     <servers />
   </component>
@@ -66,10 +66,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1606376211262" />
-    <state x="945" y="329" width="670" height="625" key="search.everywhere.popup" timestamp="1606708669252">
+    <state x="945" y="329" width="670" height="625" key="search.everywhere.popup" timestamp="1606890989529">
       <screen x="0" y="23" width="2560" height="1330" />
     </state>
     <state x="945" y="331" width="670" height="676" key="search.everywhere.popup/0.0.2560.1440@0.0.2560.1440" timestamp="1606436288190" />
-    <state x="945" y="329" width="670" height="625" key="search.everywhere.popup/0.23.2560.1330@0.23.2560.1330" timestamp="1606708669252" />
+    <state x="945" y="329" width="670" height="625" key="search.everywhere.popup/0.23.2560.1330@0.23.2560.1330" timestamp="1606890989529" />
   </component>
 </project>

@@ -1,40 +1,33 @@
 const body = document.getElementById('product');
-const board = {
-  item : ['Invite&Share 개선', '[11/17] 권한체계 및 보 url', 'Milestone', 'Mobile 대응', 'Mail (Mailchimp)', 'Homepage'],
-  desc : ['Updated yesterday by Sophie', 'Updated 11/17 by Sophie', 'Updated 11/10 by Sophie', 'Updated 11/09 by Sophie', 'Updated 10/14 by Sophie', 'Updated 09/01 by jeehea']
-}
-
 const itemInput = document.createElement('input');
 itemInput.id="item";
 const descInput = document.createElement('input');
 descInput.id="desc"
 const create = document.createElement('button');
-const update = document.createElement('button');
 body.append(itemInput);
 body.append(descInput);
 create.textContent = '추가';
 body.append(create);
-update.textContent = '수정';
-body.append(update);
 
-// const form = document.createElement('form');
-// const itemInput = document.createElement('input');
-// itemInput.id="item";
-// const descInput = document.createElement('input');
-// descInput.id="desc"
-// const create = document.createElement('button');
-// const update = document.createElement('button');
-// form.append(itemInput);
-// form.append(descInput);
-// create.textContent = '추가';
-// form.append(create);
-// update.textContent = '수정';
-// form.append(update);
+export const board = {
+  item : ['Invite&Share 개선', '[11/17] 권한체계 및 보 url', 'Milestone', 'Mobile 대응', 'Mail (Mailchimp)', 'Homepage'],
+  desc : ['Updated yesterday by Sophie', 'Updated 11/17 by Sophie', 'Updated 11/10 by Sophie', 'Updated 11/09 by Sophie', 'Updated 10/14 by Sophie', 'Updated 09/01 by jeehea']
+}
 
+function onClick(but, id){
+  but.addEventListener('click',  function() {
+    const item = prompt("1");
+    const desc = prompt("2");
+    document.getElementById(String(id)).firstChild.firstChild.textContent = item;
+    document.getElementById(String(id)).firstChild.lastChild.textContent = desc;
+  });
+}
 
 body.appendChild(document.createElement('div'));
 body.lastElementChild.className='items';
 for(let i = 0; i<board.item.length; i++){
+  const but = document.createElement('button');
+  but.id=String(i);
   const div = document.createElement('div');
   div.className = 'box';
   const proItem = document.createElement('div');
@@ -43,11 +36,17 @@ for(let i = 0; i<board.item.length; i++){
   proDesc.textContent = board.desc[i];
   div.append(proItem);
   div.append(proDesc);
-  body.lastElementChild.append(div);
+  but.append(div);
+  onClick(but, i);
+  body.lastElementChild.append(but);
 }
 
 
-create.addEventListener('click', function(){
+
+//새로 추가한 애들도 button 형식으로 바뀌도록 해야, btn Array 추가, eventListener 추가
+create.addEventListener('click', function() {
+  const but = document.createElement('button');
+  but.id=String(board.item.length);
   const div = document.createElement('div');
   div.className = 'box';
   const proItem = document.createElement('div');
@@ -56,11 +55,9 @@ create.addEventListener('click', function(){
   proDesc.textContent = document.getElementById('desc').value;
   div.append(proItem);
   div.append(proDesc);
-  body.lastElementChild.append(div);
+  but.append(div);
+  onClick(but, but.id);
+  body.lastElementChild.append(but);
+  board.item.push(proItem.textContent);
+  board.desc.push(proDesc.textContent);
 });
-
-update.addEventListener('click', function(){
-  body.lastElementChild.lastElementChild.firstElementChild.textContent = document.getElementById('item').value;
-  body.lastElementChild.lastElementChild.lastElementChild.textContent = document.getElementById('desc').value;
-});
-

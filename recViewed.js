@@ -1,4 +1,6 @@
-let recViewed = {
+
+
+export let recViewed = {
   item: ['Stand-up(11/25)'],
   desc : ['updated 15 hr ago by Sophie.Lee'],
 };
