@@ -8,10 +8,11 @@
   display:flex;
   margin-top:15px;
   margin-left:30px;
-  width:1500px;
-  height:1100px;
+  width:2400px;
+  height:1500px;
 }
 .bottom-left{
+  width: 300px;
   margin-left:40px;
   margin-right:40px;
 }
@@ -21,10 +22,11 @@
   margin-left:100px;
 }
 .member{
-  margin:20px;
   padding:5px;
   font-size:20px;
   border:1px solid;
+  display:flex;
+  justify-content: center;
 }
 .section{
   display:flex;
@@ -34,16 +36,29 @@
   font-size:20px;
 }
 .section-item{
-  padding: 10px 10px 10px 30px;
+  margin-bottom: 20px;
+  margin-top:20px;
+}
+.boxes{
+  display:flex;
+  flex-wrap:wrap;
+  margin-bottom: 30px;
 }
 .items{
   display:flex;
-  justify-content: flex-start;
+  flex-direction: column;
   flex-wrap:wrap;
 }
 .box {
-  width:200px;
+  width:190px;
   height:55px;
   padding-top:150px;
   border:1px solid;
+  margin :10px;
+}
+ul{
+  list-style:none;
+}
+.plain{
+  border: 0;
 }

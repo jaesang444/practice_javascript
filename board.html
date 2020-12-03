@@ -7,10 +7,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="board.css"/>
-  <script type="module" src="option.js" defer></script>
-  <script type="module" src="recViewed.js" defer></script>
-  <script type="module" src="allBoard.js" defer></script>
-  <script type="module" src="product.js" defer></script>
+  <script>
+    const data = {
+      'General': {
+        main:['General #1','General #2','General #3','General #4','General #5','General #6','General #7'],
+        sub:['Explanation of General #1','Explanation of General #2','Explanation of General #3','Explanation of General #4','Explanation of General #5','Explanation of General #6','Explanation of General #7']
+      },
+      'Stand-up': {
+        main:['Stand-up #1','Stand-up #2','Stand-up #3'],
+        sub:['Explanation of Stand-up #1','Explanation of Stand-up #2','Explanation of Stand-up #3']
+      },
+      'PM-Designer':{
+        main:['PM-Designer #1','PM-Designer #2','PM-Designer #3','PM-Designer #4','PM-Designer #5'],
+        sub:['Explanation of PM-Designer #1','Explanation of PM-Designer #2','Explanation of PM-Designer #3','Explanation of PM-Designer #4','Explanation of PM-Designer #5']
+      },
+      'Data':{
+        main:['Data #1','Data #2','Data #3','Data #4','Data #5','Data #6'],
+        sub:['Explanation of Data #1','Explanation of Data #2','Explanation of Data #3','Explanation of Data #4','Explanation of Data #5','Explanation of Data #6']
+      },
+      'Retro':{
+        main:['Retro #1','Retro #2','Retro #3','Retro #4','Retro #5','Retro #6','Retro #7','Retro #8','Retro #9'],
+        sub:['Explanation of Retro #1','Explanation of Retro #2','Explanation of Retro #3','Explanation of Retro #4','Explanation of Retro #5','Explanation of Retro #6','Explanation of Retro #7','Explanation of Retro #8','Explanation of Retro #9'],
+      },
+    };
+    const sections = ['General', 'Stand-up', 'PM-Designer','Data','Retro'];
+  </script>
 </head>
 
 <body>
@@ -19,27 +40,15 @@
     <div class="bottom">
       <div class="bottom-left">
         <div class="member"> 21 members </div>
-        <div id="options">
+        <div id="bottom-left">
         </div>
       </div>
-      <div class="bottom-right">
-        <div>
-          <h3>Recently viewed</h3>
-          <div id="recView" class="items">
-          </div>
-        </div>
-        <div>
-          <h1>General</h1>
-          <div id="allBoard" class="items">
-          </div>
-        </div>
-        <div>
-          <h1>Product</h1>
-          <div id="product">
-          </div>
-        </div>
+      <div class="bottom-right" id="bottom-right">
+        <h1>All board</h1>
       </div>
     </div>
   </div>
+  <script type="module" src="bottomLeft.js"></script>
+  <script type="module" src="bottomRight.js"></script>
 </body>
 </html>
