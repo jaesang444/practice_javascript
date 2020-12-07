@@ -7,6 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="board.css"/>
+
+</head>
+
+<body>
+  <div>
+    <div class="top">Team.Workspace</div>
+    <div class="bottom">
+      <div class="bottom-left">
+        <div class="member"> 21 members </div>
+        <div id="bottom-left">
+        </div>
+      </div>
+      <div class="bottom-right" id="bottom-right">
+        <h1>All board</h1>
+      </div>
+    </div>
+  </div>
   <script>
     const data = {
       'General': {
@@ -32,22 +49,6 @@
     };
     const sections = ['General', 'Stand-up', 'PM-Designer','Data','Retro'];
   </script>
-</head>
-
-<body>
-  <div>
-    <div class="top">Team.Workspace</div>
-    <div class="bottom">
-      <div class="bottom-left">
-        <div class="member"> 21 members </div>
-        <div id="bottom-left">
-        </div>
-      </div>
-      <div class="bottom-right" id="bottom-right">
-        <h1>All board</h1>
-      </div>
-    </div>
-  </div>
   <script type="module" src="bottomLeft.js"></script>
   <script type="module" src="bottomRight.js"></script>
 </body>
