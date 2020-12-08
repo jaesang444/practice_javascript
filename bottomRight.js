@@ -8,20 +8,20 @@ now.className = 'items';
 initBottomRight();
 
 function initBottomRight(){
-  for(let i = 0;i<sections.length;i++) {
-    addBoard(i);
-    for (let j = 0; j < data[sections[i]].main.length; j++) {
-      addBox(i, j);
-    }
-  }
+  data2.forEach(function(element1, idx1, array1){
+    addBoard(idx1);
+    array1[idx1][Object.keys(array1[idx1])[0]].forEach(function(element2, idx2, array2){
+      addBox(idx1,idx2);
+    })
+  });
 }
 
 export function addBoard(idx){
   const li = document.createElement('li');
   const ul = document.createElement('ul');
   const button = document.createElement('button');
-  const tmp = document.createTextNode(sections[idx]);
-  const butText = document.createTextNode( "+ add " + sections[idx]);
+  const tmp = document.createTextNode(Object.keys(data2[idx])[0]);
+  const butText = document.createTextNode( "+ add " + Object.keys(data2[idx])[0]);
   li.id = "brd" + idx+"";
   ul.className="boxes";
   button.append(butText);
@@ -36,24 +36,23 @@ export function addBoard(idx){
 function onClickAddBox(idx){
   const main = prompt('main');
   const sub = prompt('sub');
-  data[sections[idx]].main.push(main);
-  data[sections[idx]].sub.push(sub);
-  addBox(idx,data[sections[idx]].main.length - 1);
-  addDesc(idx,data[sections[idx]].main.length-1);
+  data2[idx][Object.keys(data2[idx])[0]].push({main : main, sub : sub});
+  addBox(idx,data2[idx][Object.keys(data2[idx])[0]].length - 1);
+  addDesc(idx,data2[idx][Object.keys(data2[idx])[0]].length - 1);
 }
 
 function addBox(idx1, idx2) {
   const section = document.getElementById("brd" + idx1 + "");
   const ul = section.firstElementChild;
-  const button = document.createElement('button');
   const br = document.createElement('br');
+  const button = document.createElement('button');
   button.id = "brd" + (idx1 + "") + (idx2 + "");
   button.style.borderColor = 'black';
   button.style.margin = "10px";
   const li = document.createElement('li');
   li.className = 'box';
-  const descmain = document.createTextNode(data[sections[idx1]].main[idx2]);
-  const descsub = document.createTextNode(data[sections[idx1]].sub[idx2]);
+  const descmain = document.createTextNode(data2[idx1][Object.keys(data2[idx1])[0]][idx2].main);
+  const descsub = document.createTextNode(data2[idx1][Object.keys(data2[idx1])[0]][idx2].sub);
   li.append(descmain);
   li.append(br);
   li.append(descsub);
@@ -65,8 +64,8 @@ function addBox(idx1, idx2) {
 function onClickUpdate(idx1, idx2, ul, button) {
   const main = prompt('main');
   const sub = prompt('sub');
-  data[sections[idx1]].main[idx2] = main;
-  data[sections[idx1]].sub[idx2] = sub;
+  data2[idx1][Object.keys(data2[idx1])[0]].main = main;
+  data2[idx1][Object.keys(data2[idx1])[0]].sub = sub;
   const changeR = document.getElementById("brd" + (idx1 + "") + (idx2 + ""));
   changeR.firstChild.firstChild.textContent = main;
   changeR.firstChild.lastChild.textContent = sub;
