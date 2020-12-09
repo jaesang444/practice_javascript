@@ -43,10 +43,10 @@ export const addDesc = (idx1, idx2) => {
 }
 
 const initBottomLeft = () => {
-  data2.forEach(function(element,idx,array){
+  data2.forEach((element,idx,array) => {
     const section = Object.keys(element)[0];
     addSec(idx);
-    data2[idx][section].forEach(function(element2, idx2, array2){
+    data2[idx][section].forEach((element2, idx2) => {
       addDesc(idx,idx2);
     })
   })
@@ -60,7 +60,7 @@ const initBottomLeft = () => {
 initBottomLeft();
 
 
-
+// 화면 이동
 // export function addDesc(idx1, idx2) {
 //   const section = document.getElementById("bls"+ idx1 + "");
 //   const button = document.createElement('button');

@@ -63,9 +63,9 @@ const onClickUpdate = (idx1, idx2) => {
 }
 
 const initBottomRight = () => {
-  data2.forEach(function(element1, idx1, array1){
+  data2.forEach((element1, idx1, array1) =>{
     addBoard(idx1);
-    array1[idx1][Object.keys(array1[idx1])[0]].forEach(function(element2, idx2, array2){
+    array1[idx1][Object.keys(array1[idx1])[0]].forEach((element2, idx2, array2) => {
       addBox(idx1,idx2);
     })
   });
