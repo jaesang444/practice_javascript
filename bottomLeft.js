@@ -4,32 +4,20 @@ const root = document.getElementById('bottom-left');
 root.appendChild(document.createElement('ul'));
 const now = root.lastChild ;
 
-initBottomLeft();
-
-function initBottomLeft(){
-  data2.forEach(function(element,idx,array){
-    const section = Object.keys(element)[0];
-    addSec(idx);
-    data2[idx][section].forEach(function(element2, idx2, array2){
-      addDesc(idx,idx2);
-    })
-  })
-  const button = document.createElement('button');
-  const add = document.createTextNode("+ add section");
-  button.append(add);
-  root.append(button);
-  button.addEventListener('click', onClickAddSection);
-}
-
-
-function onClickAddSection() {
+const onClickAddSection = () => {
   const section = prompt('main');
   data2.push({ [ section ] : [] });
   addSec(data2.length - 1);
   addBoard(data2.length - 1);
 }
 
-function addSec(idx) {
+const onClickChangeColor = (idx1,idx2) => {
+  const box = document.getElementById('brd' + idx1+""+idx2+"");
+  setTimeout(()=> box.style.borderColor='red', 0);
+  setTimeout(()=> box.style.borderColor='black', 2000);
+}
+
+const addSec = idx => {
   const li = document.createElement('li');
   li.id = "bls" + idx+"";
   li.className = 'section-item';
@@ -39,7 +27,7 @@ function addSec(idx) {
   now.append(li);
 }
 
-export function addDesc(idx1, idx2) {
+export const addDesc = (idx1, idx2) => {
   const section = document.getElementById("bls"+ idx1 + "");
   const button = document.createElement('button');
   const ul = section.firstElementChild;
@@ -54,11 +42,24 @@ export function addDesc(idx1, idx2) {
   ul.append(button);
 }
 
-function onClickChangeColor(idx1,idx2){
-  const box = document.getElementById('brd' + idx1+""+idx2+"");
-  setTimeout(()=> box.style.borderColor='red', 0);
-  setTimeout(()=> box.style.borderColor='black', 2000);
+const initBottomLeft = () => {
+  data2.forEach(function(element,idx,array){
+    const section = Object.keys(element)[0];
+    addSec(idx);
+    data2[idx][section].forEach(function(element2, idx2, array2){
+      addDesc(idx,idx2);
+    })
+  })
+  const button = document.createElement('button');
+  const add = document.createTextNode("+ add section");
+  button.append(add);
+  root.append(button);
+  button.addEventListener('click', onClickAddSection);
 }
+
+initBottomLeft();
+
+
 
 // export function addDesc(idx1, idx2) {
 //   const section = document.getElementById("bls"+ idx1 + "");

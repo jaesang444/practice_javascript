@@ -23,11 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fa65c36-b363-4ee7-b6bb-838c92b0304f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/board.html" beforeDir="false" afterPath="$PROJECT_DIR$/board.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bottomLeft.js" beforeDir="false" afterPath="$PROJECT_DIR$/bottomLeft.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bottomRight.js" beforeDir="false" afterPath="$PROJECT_DIR$/bottomRight.js" afterDir="false" />
     </list>
@@ -95,7 +91,7 @@
       <workItem from="1606980618746" duration="13626000" />
       <workItem from="1607325523216" duration="348000" />
       <workItem from="1607325926328" duration="390000" />
-      <workItem from="1607326342181" duration="24357000" />
+      <workItem from="1607326342181" duration="27031000" />
     </task>
     <servers />
   </component>

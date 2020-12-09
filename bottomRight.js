@@ -5,18 +5,7 @@ root.appendChild(document.createElement('ul'));
 const now = root.lastChild;
 now.className = 'items';
 
-initBottomRight();
-
-function initBottomRight(){
-  data2.forEach(function(element1, idx1, array1){
-    addBoard(idx1);
-    array1[idx1][Object.keys(array1[idx1])[0]].forEach(function(element2, idx2, array2){
-      addBox(idx1,idx2);
-    })
-  });
-}
-
-export function addBoard(idx){
+export const addBoard = idx => {
   const li = document.createElement('li');
   const ul = document.createElement('ul');
   const button = document.createElement('button');
@@ -26,14 +15,14 @@ export function addBoard(idx){
   ul.className="boxes";
   button.append(butText);
   button.style.marginBottom = "30px";
-  button.addEventListener('click', ()=> onClickAddBox(idx));
+  button.addEventListener('click', () => onClickAddBox(idx));
   li.append(tmp);
   li.append(ul);
   li.append(button);
   now.append(li);
 }
 
-function onClickAddBox(idx){
+const onClickAddBox = idx => {
   const main = prompt('main');
   const sub = prompt('sub');
   data2[idx][Object.keys(data2[idx])[0]].push({main : main, sub : sub});
@@ -41,7 +30,7 @@ function onClickAddBox(idx){
   addDesc(idx,data2[idx][Object.keys(data2[idx])[0]].length - 1);
 }
 
-function addBox(idx1, idx2) {
+const addBox = (idx1,idx2) => {
   const section = document.getElementById("brd" + idx1 + "");
   const ul = section.firstElementChild;
   const br = document.createElement('br');
@@ -57,11 +46,11 @@ function addBox(idx1, idx2) {
   li.append(br);
   li.append(descsub);
   button.append(li);
-  button.addEventListener('click', () => onClickUpdate(idx1,idx2,ul,button));
+  button.addEventListener('click', () => onClickUpdate(idx1,idx2));
   ul.append(button);
 }
 
-function onClickUpdate(idx1, idx2, ul, button) {
+const onClickUpdate = (idx1, idx2) => {
   const main = prompt('main');
   const sub = prompt('sub');
   data2[idx1][Object.keys(data2[idx1])[0]].main = main;
@@ -72,3 +61,14 @@ function onClickUpdate(idx1, idx2, ul, button) {
   const changeL = document.getElementById("bld" + idx1 + "" + idx2 + "");
   changeL.firstChild.textContent = main;
 }
+
+const initBottomRight = () => {
+  data2.forEach(function(element1, idx1, array1){
+    addBoard(idx1);
+    array1[idx1][Object.keys(array1[idx1])[0]].forEach(function(element2, idx2, array2){
+      addBox(idx1,idx2);
+    })
+  });
+}
+
+initBottomRight();
